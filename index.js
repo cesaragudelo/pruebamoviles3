@@ -76,3 +76,18 @@ enviar.addEventListener("click",()=>{
         },3000)
     }
 })
+
+buscar.addEventListener("click",()=>{
+    let encontrar = inmuebles.find(inmueble => inmueble.idinm == idinm.value) 
+    if(encontrar == undefined){
+        alerta.classList.remove("d-none");
+        alerta.classList.add("alert-danger");
+        alerta.textContent = "Id de inmueble no encontrado..." 
+        setTimeout(()=>{
+            alerta.classList.remove("alert-danger")
+            alerta.classList.add("d-none")
+        },3000)
+    }else{
+        direccion.textContent=inmuebles.direccion.value
+    }
+})
